@@ -1,0 +1,37 @@
+version: 0.2
+
+env:
+  variables:
+      DIR_BASE: "web"
+      DIR_DIST: "web/dist"
+      DIR_CLI: "node_modules/@angular/cli/ng"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
+phases:
+  install:
+    commands:
+       - cd $DIR_BASE
+       - npm install
+  #pre_build:
+    #commands:
+      # - command
+      # - command
+  build:
+    commands:
+       - $DIR_CLI build
+      # - command
+  #post_build:
+    #commands:
+      # - command
+      # - command
+artifacts:
+  files:
+     - "*"
+     - "**/*"
+  discard-paths: yes
+  base-directory: $DIR_DIST
+#cache:
+  #paths:
+    # - paths
