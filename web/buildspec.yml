@@ -4,7 +4,7 @@ env:
   variables:
       DIR_BASE: "web"
       DIR_DIST: "web/dist"
-      DIR_CLI: "node_modules/@angular/cli/ng"
+      DIR_CLI: "./node_modules/@angular/cli/ng"
   #parameter-store:
      # key: "value"
      # key: "value"
@@ -20,7 +20,7 @@ phases:
       # - command
   build:
     commands:
-       - $DIR_CLI build
+       - npm run build
       # - command
   #post_build:
     #commands:
